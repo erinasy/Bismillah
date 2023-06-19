@@ -47,3 +47,4 @@ Route::resource('rhk', RhkController::class);
 // Route::get('rhk/{id}/index', [RhkController::class, 'index']);
 Route::get('rhk/{id}/show', [RhkController::class, 'show'])->middleware('auth');
 Route::resource('users', UserController::class);
+// Route::resource('', UserController::class);
