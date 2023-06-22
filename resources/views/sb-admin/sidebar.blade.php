@@ -28,6 +28,13 @@
     </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
+
+    <li class="nav-item">
+        <a class="nav-link" href="/intervensi">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>DATA INTERVENSI</span>
+        </a>
+    </li>
     <li class="nav-item">
         <a class="nav-link" href="/rhk">
             <i class="fas fa-fw fa-cog"></i>
@@ -41,14 +48,6 @@
             <span>LAPORAN</span>
         </a>
     </li>
-
-    <li class="nav-item">
-        <a class="nav-link" href="/laporan">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>DRAFT</span>
-        </a>
-    </li>
-
     <li class="nav-item">
         <a class="nav-link" href="/arsip">
             <i class="fas fa-fw fa-cog"></i>

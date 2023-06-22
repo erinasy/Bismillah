@@ -14,20 +14,48 @@ class RhkSeeder extends Seeder
     public function run(): void
     {
         DB::table('rhk')->insert([
-            'id'=> '401',
-            'nama_rhk' => '1. Penyusunan Dokumen 
-                           2. Dokumen Pendukung
-                           3. Meningkatkan penataan terhadap',
-            'bidang_id' => '1101',
-            'user_id' => '3',
+            'id'=> '1',
+            'nama_rhk' => 'Terlaksananya penyusunan dokumen perencanaan lingkungan hidup yang ditetapkan',
+            'bidang_id' => '1',
+            'user_id' => '2',
+            'intervensi_id' => '1',
+
         ]);
         DB::table('rhk')->insert([
-            'id'=> '402',
-            'nama_rhk' => '1. Penyusunan Dokumen 
-                           2. Dokumen Pendukung
-                           3. Meningkatkan penataan terhadap',
-            'bidang_id' => '1101',
-            'user_id' => '1',
+            'id'=> '2',
+            'nama_rhk' =>'Tersedianya dokumen pendukung pemberian penghargaan lingkungan hidup tingkat kota/provinsi dan nasional siap disampaikan',
+            'bidang_id' => '1',
+            'user_id' => '2',
+            'intervensi_id' => '1',
+        ]);
+        DB::table('rhk')->insert([
+            'id'=> '3',
+            'nama_rhk' =>'Terlaksannya pembinaan dan pengembangan kelembagaan kelompok masyarakat peduli lingkungan hidup dan peningkatan peran serta masyarakat dan pelaporan masyarakat dalam pelestarian fungsi lingkungan hidup',
+            'bidang_id' => '1',
+            'user_id' => '2',
+            'intervensi_id' => '1',
+        ]);
+        DB::table('rhk')->insert([
+            'id'=> '4',
+            'nama_rhk' => 'Terlaksananya penyusunan dokumen perencanaan lingkungan hidup yang ditetapkan',
+            'bidang_id' => '1',
+            'user_id' => '2',
+            'intervensi_id' => '2',
+
+        ]);
+        DB::table('rhk')->insert([
+            'id'=> '5',
+            'nama_rhk' =>'Tersedianya dokumen pendukung pemberian penghargaan lingkungan hidup tingkat kota/provinsi dan nasional siap disampaikan',
+            'bidang_id' => '1',
+            'user_id' => '2',
+            'intervensi_id' => '2',
+        ]);
+        DB::table('rhk')->insert([
+            'id'=> '6',
+            'nama_rhk' =>'Terlaksannya pembinaan dan pengembangan kelembagaan kelompok masyarakat peduli lingkungan hidup dan peningkatan peran serta masyarakat dan pelaporan masyarakat dalam pelestarian fungsi lingkungan hidup',
+            'bidang_id' => '1',
+            'user_id' => '2',
+            'intervensi_id' => '2',
         ]);
     }
 }

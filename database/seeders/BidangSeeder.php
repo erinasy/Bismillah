@@ -14,49 +14,41 @@ class BidangSeeder extends Seeder
     public function run(): void
     {
         DB::table('bidang')->insert([
-            'id'=> '1101',
-            'nama_bidang' => 'Penataaan dan Penaatan Lingkungan',
-            'kategori_id' =>'9011'
+            'id'=> '1',
+            'nama_bidang' => 'Bidang Penataan dan Penaatan Lingkungan',
+            'nama_kategori' => 'Pedal',
+            'kategori_id' =>'1'
         ]);
         DB::table('bidang')->insert([
-            'id'=> '1102',
-            'nama_bidang' => 'Penataaan dan Penaatan Lingkungan',
-            'kategori_id' =>'9012'
+            'id'=> '2',
+            'nama_bidang' => 'Bidang Penataan dan Penaatan Lingkungan',
+            'nama_kategori' => 'Penyuluh',
+            'kategori_id' =>'2'
         ]);
         DB::table('bidang')->insert([
-            'id'=> '1103',
-            'nama_bidang' => 'Penataaan dan Penaatan Lingkungan',
-            'kategori_id' =>'9013'
+            'id'=> '3',
+            'nama_bidang' => 'Bidang Penataaan dan Penaatan Lingkungan',
+            'nama_kategori' => 'Pengawas',
+            'kategori_id' =>'3'
         ]);
         DB::table('bidang')->insert([
-            'id'=> '2201',
-            'nama_bidang' => 'Pengendalian Pencemaran Pemeliharaan Lingkungan dan Pertamanan',
-            'kategori_id' =>'9011'
+            'id'=> '4',
+            'nama_bidang' => 'Bidang Pengendalian Pencemaran, Pemeliharaan Lingkungan, dan Pertamanan',
+            'nama_kategori' => 'Pedal',
+            'kategori_id' =>'1'
         ]);
         DB::table('bidang')->insert([
-            'id'=> '2202',
-            'nama_bidang' => 'Pengendalian Pencemaran Pemeliharaan Lingkungan dan Pertamanan',
-            'kategori_id' =>'9012'
+            'id'=> '5',
+            'nama_bidang' => 'Bidang Pengelolaan Persampahan dan Pengelolaan Limbah Bahan Berbahaya dan Beracun',
+            'nama_kategori' => 'Pedal',
+            'kategori_id' =>'1'
         ]);
         DB::table('bidang')->insert([
-            'id'=> '2203',
-            'nama_bidang' => 'Pengendalian Pencemaran Pemeliharaan Lingkungan dan Pertamanan',
-            'kategori_id' =>'9013'
+            'id'=> '6',
+            'nama_bidang' => 'Bidang Pengelolaan Persampahan dan Pengelolaan Limbah Bahan Berbahaya dan Beracun',
+            'nama_kategori' => 'Penyuluh',
+            'kategori_id' =>'2'
         ]);
-        DB::table('bidang')->insert([
-            'id'=> '3301',
-            'nama_bidang' => 'Pengendalian Sampah dan Bahan Berbahaya Beracun',
-            'kategori_id' =>'9011'
-        ]);
-        DB::table('bidang')->insert([
-            'id'=> '3302',
-            'nama_bidang' => 'Pengendalian Sampah dan Bahan Berbahaya Beracun',
-            'kategori_id' =>'9012'
-        ]);
-        DB::table('bidang')->insert([
-            'id'=> '3303',
-            'nama_bidang' => 'Pengendalian Sampah dan Bahan Berbahaya Beracun',
-            'kategori_id' =>'9013'
-        ]);
+       
     }
 }

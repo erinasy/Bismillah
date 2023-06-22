@@ -7,27 +7,23 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\BidangModel;
 use App\Models\User;
 
-class RhkModel extends Model
+class IntervensiModel extends Model
 {
     use HasFactory;
-    protected $table = 'rhk';
+
+    protected $table = 'intervensi';
     protected $fillable = [
-        'nama_rhk',
+        'nama_intervensi',
         'bidang_id',
-        'user_id',
-        'intervensi_id'
+        'user_id'
     ];
 
-    public function dt_bidang()
+    public function dt_bidangIn()
     {
         return $this->belongsTo(BidangModel::class, 'bidang_id');
     }
-    public function dt_user()
+    public function dt_userIn()
     {
         return $this->belongsTo(User::class, 'user_id');
-    }
-    public function dt_intervensi()
-    {
-        return $this->belongsTo(IntervensiModel::class, 'intervensi_id');
     }
 }

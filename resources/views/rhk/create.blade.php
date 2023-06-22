@@ -10,11 +10,11 @@
             <form action="{{ route('rhk.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
-                
+
                 {{-- NAMA --}}
                 <div class="form-group mt-4">
                     <label for="exampleInputEmail1">Nama RHK</label>
-                    <input type-"text class="form-control @error('nama_rhk') is-invalid @enderror" name="nama_rhk" value="{{ old('nama_rhk')}}">
+                    <input type="text" class="form-control @error('nama_rhk') is-invalid @enderror" name="nama_rhk" value="{{ old('nama_rhk')}}">
                     {{-- PESAN ERROR --}}
                     @error('nama_rhk')
                         <div class="invalid-feedback">
@@ -22,6 +22,21 @@
                         </div>
                     @enderror
                  </div>
+
+                <label for="exampleInputEmail1" class="form-label mt-4">RHK Intervensi</label>
+                {{-- dropdown intervensi --}}
+                <div class="dropdown">
+                    <div class="btn-group">
+                            <select id="intervensi-dropdown" class="form-control" name="intervensi_id">
+                                <option value="">-- Pilih Intervensi --</option>
+                                @foreach ($intervensi as $data) 
+                                <option value="{{$data->id}}">
+                                    {{$data->nama_intervensi}}
+                                </option>
+                                @endforeach
+                            </select>
+                    </div>
+                </div>
 
                 <label for="exampleInputEmail1" class="form-label mt-4">Kode Bidang</label>
                 {{-- dropdown bidang --}}
@@ -31,7 +46,7 @@
                                 <option value="">-- Pilih Kode Bidang --</option>
                                 @foreach ($bidang as $data) 
                                 <option value="{{$data->id}}">
-                                    {{$data->nama_bidang}} -- {{$data->kategori_id}}
+                                    {{$data->nama_bidang}}
                                 </option>
                                 @endforeach
                             </select>

@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\IntervensiController;
 
 
 /*
@@ -47,4 +48,5 @@ Route::resource('rhk', RhkController::class);
 // Route::get('rhk/{id}/index', [RhkController::class, 'index']);
 Route::get('rhk/{id}/show', [RhkController::class, 'show'])->middleware('auth');
 Route::resource('users', UserController::class);
+Route::resource('intervensi', IntervensiController::class);
 // Route::resource('', UserController::class);

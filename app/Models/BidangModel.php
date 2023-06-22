@@ -29,4 +29,8 @@ class BidangModel extends Model
     {
         return $this->HasMany(RhkModel::class, 'id');
     }
+    public function dt_intervensi()
+    {
+        return $this->HasMany(IntervensiModel::class, 'id');
+    }
 }

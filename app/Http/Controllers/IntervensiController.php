@@ -2,37 +2,29 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\RhkModel;
-use App\Models\BidangModel;
 use App\Models\IntervensiModel;
+use App\Models\BidangModel;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class RhkController extends Controller
+class IntervensiController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    
     public function index()
     {
         $users = Auth::user();
         
         // dd($users->id);
         if($users){
-            $rhk = RhkModel::with('dt_bidang', 'dt_user')->where('user_id',$users->id)->get();
+            $intervensi = IntervensiModel::with('dt_bidangIn', 'dt_userIn')->where('user_id',$users->id)->get();
             // dd($rhk);
-             return view('rhk.index', [
-                'rhk'=>$rhk
+             return view('intervensi.index', [
+                'intervensi'=>$intervensi
             ]); 
         };
-        //  $rhk = RhkModel::with('dt_bidang', 'dt_user')->get();
-        //  return view('rhk.index', [
-        //     'rhk'=>$rhk
-        // ]);
-        
-
     }
 
     /**
@@ -40,10 +32,9 @@ class RhkController extends Controller
      */
     public function create()
     {
-        $intervensi = IntervensiModel::get();
         $bidang = BidangModel::get();
         $user = User::get();
-        return view('rhk.create', compact(['intervensi', 'user', 'bidang'])); 
+        return view('intervensi.create', compact(['bidang', 'user'])); 
     }
 
     /**
@@ -52,22 +43,20 @@ class RhkController extends Controller
     public function store(Request $request)
     {
         $data = $this->validate($request, [
-            'nama_rhk' => 'required',
+            'nama_intervensi' => 'required',
             'bidang_id' => 'required',
             'user_id' => 'required',
-            'intervensi_id' => 'required',
         ]);
-        RhkModel::create($data);
-        return redirect()->route('rhk.index')->with('success', 'Data berhasil disimpan');
+        IntervensiModel::create($data);
+        return redirect()->route('intervensi.index')->with('success', 'Data berhasil disimpan');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show($id)
+    public function show(string $id)
     {
-        $rhk = RhkModel::find($id);
-        return view('rhk.show', ['rhk'=>$rhk]);
+        //
     }
 
     /**
@@ -92,10 +81,5 @@ class RhkController extends Controller
     public function destroy(string $id)
     {
         //
-    }
-
-    public function __construct()
-    {
-        $this->middleware('auth');
     }
 }

@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('asn', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::table('bidang', function (Blueprint $table) {
+            $table->string('nama_kategori',20)->after('nama_bidang')->nullable();
         });
     }
 
@@ -22,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('asn');
+        Schema::table('bidang',function(Blueprint $table){
+            $table->dropColumn('nama_kategori');
+        });
     }
 };

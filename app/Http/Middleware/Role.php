@@ -15,7 +15,7 @@ class Role
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(auth()->user()->role==admin){
+        if(auth()->user()->role== 'admin'){
             return $next($request);
         }else{
             return redirect('home')->with('error','Kamu Tidak Dapat Mengakses!!!');

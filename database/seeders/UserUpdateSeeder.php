@@ -17,18 +17,20 @@ class UserUpdateSeeder extends Seeder
         DB::table('users')->insert([
             'username'=>'admin2',
             'name' => 'Administrator Update',
-            'bidang_id' => '1101',
-            'kategori_id' => '9012',
+            'bidang_id' => '1',
+            'kategori_id' => '2',
             'email' => 'adminUpdate@admin.com',
-            'password' => Hash::make('67890'),
+            'role' => 'admin',
+            'password' => Hash::make('0987654321'),
         ]);
         DB::table('users')->insert([
-            'username'=>'05062023',
+            'username'=>'200623',
             'name' => 'Puspita',
-            'bidang_id' => '1101',
-            'kategori_id' => '9011',
+            'bidang_id' => '1',
+            'kategori_id' => '1',
             'email' => 'puspita@admin.com',
-            'password' => Hash::make('99999'),
+            'role' => 'user',
+            'password' => Hash::make('1234567890'),
         ]);
     }
 }

@@ -53,7 +53,7 @@ class LoginController extends Controller
         if(auth()-> attempt(array('username'=>$input['username'],
              'password'=>$input['password']))){
                  
-             if(auth()->user()->role==admin){
+             if(auth()->user()->role== 'admin'){
 
                  return redirect()->route('admin-home');
 

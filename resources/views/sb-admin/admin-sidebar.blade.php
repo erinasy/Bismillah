@@ -32,7 +32,7 @@
     <li class="nav-item">
         <a class="nav-link" href="/users">
             <i class="fas fa-fw fa-cog"></i>
-            <span>DATA USERS</span>
+            <span>DATA USERS & ADMIN</span>
         </a>
     </li>
 
