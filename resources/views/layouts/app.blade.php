@@ -47,7 +47,17 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
-
+    <script type="text/javascript">
+	$(document).ready(function(){		
+		$('.form-checkbox').click(function(){
+			if($(this).is(':checked')){
+				$('.form-password').attr('type','text');
+			}else{
+				$('.form-password').attr('type','password');
+			}
+		});
+	});
+</script>
 </body>
 
 </html>

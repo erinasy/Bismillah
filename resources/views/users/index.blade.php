@@ -47,12 +47,9 @@
                             <td>{{ $s->username }}</td>
                             <td>{{ $s->name }}</td>
                             <td>{{ $s->dt_Bidang->nama_bidang}}</td>
-                            <td>{{ $s->dt_Kategori->nama_kategori}}</td>
+                            <td>{{ $s->dt_Bidang->nama_kategori}}</td>
                             <td>{{ $s->email }}</td>
                             <td>{{ $s->role }}</td>
-                            <td>
-                             <a href="/users/{{$s->id}}" class="btn btn-info">View</a>
-                            </td>
                         </td>
                         </tr>
                         @endforeach

@@ -13,9 +13,11 @@ class IntervensiModel extends Model
 
     protected $table = 'intervensi';
     protected $fillable = [
+        'id',
         'nama_intervensi',
         'bidang_id',
         'user_id'
+       
     ];
 
     public function dt_bidangIn()

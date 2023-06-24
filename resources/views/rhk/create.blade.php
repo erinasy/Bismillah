@@ -46,7 +46,7 @@
                                 <option value="">-- Pilih Kode Bidang --</option>
                                 @foreach ($bidang as $data) 
                                 <option value="{{$data->id}}">
-                                    {{$data->nama_bidang}}
+                                    {{$data->nama_bidang}} --  {{$data->nama_kategori}}
                                 </option>
                                 @endforeach
                             </select>

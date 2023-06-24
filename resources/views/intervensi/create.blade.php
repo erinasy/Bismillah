@@ -9,57 +9,40 @@
         <div class="card-body">
             <form action="{{ route('intervensi.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
-                <div class="mb-3">
-                
-                {{-- NAMA --}}
-                <div class="form-group mt-4">
-                    <label for="exampleInputEmail1">Nama Intervensi</label>
-                    <input type-"text class="form-control @error('nama_intervensi') is-invalid @enderror" name="nama_intervensi" value="{{ old('nama_intervensi')}}">
-                    {{-- PESAN ERROR --}}
-                    @error('nama_intervensi')
-                        <div class="invalid-feedback">
-                            {{$message}}
-                        </div>
-                    @enderror
-                 </div>
-                <label for="exampleInputEmail1" class="form-label mt-4">Kode Bidang</label>
-                        <div class="dropdown">
-                            <div class="btn-group">
-                                <select id="bidang-dropdown" class="form-control" name="bidang_id">
-                                    <option value="">-- Pilih Kode Bidang --</option>
-                                        @foreach ($bidang as $data) 
-                                    <option value="{{$data->id}}">
-                                        {{$data->nama_bidang}}
-                                    </option>
-                                        @endforeach
-                                </select>
-                            </div>
-                        </div>
-                        @error('bidang_id')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    <label for="exampleInputEmail1" class="form-label mt-4">Kode ASN</label>
-                        {{-- dropdown asn --}}
-                        <div class="dropdown">
-                            <div class="btn-group">
-                                    <select id="user-dropdown" class="form-control" name="user_id">
-                                        <option value="">-- Pilih Kode ASN --</option>
-                                        @foreach ($user as $data) 
-                                        <option value="{{$data->id}}">
-                                            {{$data->username}} - {{$data->name}}
-                                        </option>
-                                        @endforeach
-                                    </select>
-                            </div>
-                        </div>
-                {{-- TOMBOL TAMBAH --}}   
-                <button type="submit" value="submit" name="add" class="btn btn-md btn-success mt-2">SAVE</button>
-                {{-- TOMBOL BACK --}}
-                <a href="/intervensi" class="btn btn-md btn-secondary mt-2">BACK
-                    {{-- <span class="text">Tambah</span> --}}
-                </a>
+
+                @if($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{$error}}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
+                @if(Session::has('success'))
+                    <div class="alert alert-success text-center">
+                        <p>{{ Session::get('success')}}</p>
+                    </div>
+                @endif
+
+
+                <table class="table table-bordered" id="table">
+                    <tr> 
+                        <th>Nama Intervensi</th>
+                        <th>Bidang</th>
+                        <th>User</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="input[0]['nama_intervensi']" placeholder="Masukkan Data" class="form-control">
+                        <td><input type="number" name="input[0]['bidang_id']" placeholder="Pilih Kode Bidang" class="form-control">
+                        <td><input type="number" name="input[0]['user_id']" placeholder="Pilih Kode User" class="form-control">
+                        <td><button type="button" name="add" id="add" class="btn btn-success">Add More</button>
+                    </tr>
+                </table>
+
+                <button type="submit" class="btn btn-primary col-md-2">Save</button>
             </form>
         </div>
     </div>

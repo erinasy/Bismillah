@@ -14,13 +14,13 @@ class IntervensiSeeder extends Seeder
     public function run(): void
     {
         DB::table('intervensi')->insert([
-            'id'=> '1',
+            'id'=> '110',
             'nama_intervensi' =>'Meningkatknya penataan terhadap kebijakan di bidang lingkungan hidup',
             'bidang_id' => '1',
             'user_id' => '2',
         ]);
         DB::table('intervensi')->insert([
-            'id'=> '2',
+            'id'=> '111',
             'nama_intervensi' =>'Terfasilitasnya ketaatan masyarakat terhadap pengelolaan lingkungan hidup',
             'bidang_id' => '1',
             'user_id' => '2',

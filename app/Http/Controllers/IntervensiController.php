@@ -42,44 +42,68 @@ class IntervensiController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $this->validate($request, [
-            'nama_intervensi' => 'required',
-            'bidang_id' => 'required',
-            'user_id' => 'required',
-        ]);
-        IntervensiModel::create($data);
+        // $data = $this->validate($request, [
+        //     'nama_intervensi' => 'required',
+        //     'bidang_id' => 'required',
+        //     'user_id' => 'required',
+        // ]);
+        // IntervensiModel::create($data);
+        // return redirect()->route('intervensi.index')->with('success', 'Data berhasil disimpan');
+
+        $request->validate([
+                'input.*.nama_intervensi' => 'required',
+                'input.*.bidang_id' => 'required',
+                'input.*.user_id' => 'required'
+            ],
+            [
+                'input.*.nama_intervensi' => 'Masukkan Data Intervensi!!!',
+                'input.*.bidang_id' => 'Pilih Kode Bidangi!!!',
+                'input.*.user_id' => 'Pilih Kode User!!!'
+            ]
+        );
+
+        foreach($request->input as $key => $value){
+            IntervensiModel::create($value);
+        }
+
         return redirect()->route('intervensi.index')->with('success', 'Data berhasil disimpan');
     }
+
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(IntervensiModel $intervensi)
     {
-        //
+        // return view('intervensi.detail', compact('intervensi'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(IntervensiModel $intervensi)
     {
-        //
+        // return view('intervensi.edit', compact(['intervensi']));
+        // // HARUS PAKE COMPACT
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, IntervensiModel $id)
     {
-        //
+        // $data=$request->all();
+
+        // $intervensi->update($data);
+        // return redirect()->route('intervensi.index')->with('success', 'Data berhasil diedit');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(IntervensiModel $intervensi)
     {
-        //
+        $intervensi->delete($intervensi->id);
+        return redirect()->route('intervensi.index')->with('success', 'Data berhasil dihapus');
     }
 }

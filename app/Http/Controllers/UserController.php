@@ -75,9 +75,11 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
-        //
+        $users = User::find($id);
+        $bidang = BidangModel::all();
+        return view('users.edit',['users'=>$users,'bidang'=>$bidang]);
     }
 
     /**
@@ -85,7 +87,17 @@ class UserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $student = Student::find($id);
+        $student->nim = $request->nim;
+        $student->name = $request->name;
+        $student->department = $request->department;
+        $student->phone_number = $request->phone_number;
+
+        $kelas = new Kelas;
+        $kelas->id = $request->Kelas;
+        $student->kelas()->associate($kelas);
+        $student->save();
+        return redirect()->route('students.index');
     }
 
     /**

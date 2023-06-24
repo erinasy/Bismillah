@@ -70,7 +70,7 @@
                                 <div class="dropdown">
                                 <div class="btn-group">
                                         <select id="bidang-dropdown" class="form-control" name="kategori_id">
-                                            <option value="">-- Pilih Kode Bidang --</option>
+                                            <option value="">-- Pilih Kode Kategori --</option>
                                             @foreach ($kategori as $data) 
                                             <option value="{{$data->id}}">
                                                 {{$data->nama_kategori}} 
@@ -115,7 +115,8 @@
                                 @enderror
                             </div>
                         </div>
-
+                        <input type="checkbox" class="form-checkbox"> Show password
+			<br/>
                         <div class="row mb-3">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
 
@@ -128,7 +129,7 @@
                             <div class="col-md-6">
                                 <select class="form-control" name="role">
                                     <option value="admin">admin</option>
-                                    <option value="admin">user</option>
+                                    <option value="user">user</option>
                                 </select>
                             </div>
                         </div> 

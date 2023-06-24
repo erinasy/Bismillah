@@ -31,6 +31,7 @@
                         <tr>
                             <th scope="col">No</th>
                             <th scope="col">Nama Intervensi</th>
+                            <th scope="col">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -38,7 +39,18 @@
                         <tr>
                             <th scope="row">{{ $key+1 }}</th>
                             <td>{{ $a->nama_intervensi}}</td>
-                        </td>
+                            <td align="center">
+                                
+                                {{-- Tombol Delete --}}
+                                <form action="{{ route('intervensi.destroy', $a->id) }}" method="POST" class="d-inline">
+                                    @method('DELETE')
+                                    @csrf
+                                        <button style="width: 60px; height: 40px; margin:5px" class="btn btn-danger btn-icon-split" onclick="return confirm('Anda Yakin Menghapus Data Ini?')">
+                                        <i class="bi bi-trash3"></i>
+                                        </button>
+                                </form>
+                                
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>
