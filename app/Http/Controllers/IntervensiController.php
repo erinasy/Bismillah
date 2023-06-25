@@ -42,32 +42,38 @@ class IntervensiController extends Controller
      */
     public function store(Request $request)
     {
-        // $data = $this->validate($request, [
-        //     'nama_intervensi' => 'required',
-        //     'bidang_id' => 'required',
-        //     'user_id' => 'required',
-        // ]);
-        // IntervensiModel::create($data);
-        // return redirect()->route('intervensi.index')->with('success', 'Data berhasil disimpan');
+        $data = $this->validate($request, [
+             'nama_intervensi' => 'required',
+             'bidang_id' => 'required',
+             'user_id' => 'required',
+         ]);
+         IntervensiModel::create($data);
+         return redirect()->route('intervensi.index')->with('success', 'Data berhasil disimpan');
 
-        $request->validate([
-                'input.*.nama_intervensi' => 'required',
-                'input.*.bidang_id' => 'required',
-                'input.*.user_id' => 'required'
-            ],
-            [
-                'input.*.nama_intervensi' => 'Masukkan Data Intervensi!!!',
-                'input.*.bidang_id' => 'Pilih Kode Bidangi!!!',
-                'input.*.user_id' => 'Pilih Kode User!!!'
-            ]
-        );
+        // dd($request->all());
+        // $id =  $request->input('id');
+        // $nama_intervensi =  $request->input('nama_intervensi', []);
+        // $bidang_id =  $request->input('bidang_id', []);
+        // $user_id =  $request->input('user_id', []);
+        
+       
+        // $newIntervensArray = array(
+                            
+        //                     "id"=>$id, 
+        //                     "nama_intervensi"=>$nama_intervensi,
+        //                     'created_at' => \Carbon::now(),
+        //                     "unit_title"=> $unit_title);
 
-        foreach($request->input as $key => $value){
-            IntervensiModel::create($value);
-        }
+        // $created = DB::table("units")->insert($newCategoryArray);
 
-        return redirect()->route('intervensi.index')->with('success', 'Data berhasil disimpan');
+
+        // if($created){
+        //     return redirect()->route('intervensi')->withSuccess('Unit Created successfully!');
+        // }else{
+        //    return "Unit was not Created";
+        // }
     }
+        
 
 
     /**

@@ -39,6 +39,7 @@
                         <tr>
                             <th scope="row">{{ $key+1 }}</th>
                             <td>{{ $a->nama_intervensi}}</td>
+                            
                             <td align="center">
                                 
                                 {{-- Tombol Delete --}}

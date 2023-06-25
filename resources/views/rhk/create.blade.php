@@ -1,7 +1,7 @@
 @extends('sb-admin.index')
 
 @section('title')
-    | LAPORAN
+    | DATA RHK
 @endsection
 @section('content')
 <h2>Tambah Data RHK</h2>
