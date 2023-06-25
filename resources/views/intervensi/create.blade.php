@@ -100,7 +100,7 @@
                                                             <label for="exampleInputEmail1" class="form-label mt-10">Kode Bidang</label>
                                                                 <div class="dropdown">
                                                                     <div class="btn-group">
-                                                                        <select id="bidang-dropdown" class="form-control" name="bidang_id">
+                                                                        <select id="bidang-dropdown" class="form-control" name="bidang_id[]">
                                                                             <option value="">-- Pilih Kode Bidang --</option>
                                                                                 @foreach ($bidang as $data) 
                                                                             <option value="{{$data->id}}">
@@ -125,7 +125,7 @@
                                                             <label for="exampleInputEmail1" class="form-label mt-10">Kode ASN</label>
                                                                 <div class="dropdown">
                                                                     <div class="btn-group">
-                                                                            <select id="user-dropdown" class="form-control" name="user_id">
+                                                                            <select id="user-dropdown" class="form-control" name="user_id[]">
                                                                                 <option value="">-- Pilih Kode ASN --</option>
                                                                                 @foreach ($user as $data) 
                                                                                 <option value="{{$data->id}}">
@@ -240,7 +240,7 @@
                                 <div class="form-group col-md-3">
                                     <td>
                                     <label for="exampleInputEmail1">Data Intervensi</label>
-                                         <input type="text" class="form-control @error('nama_intervensi') is-invalid @enderror" name="nama_intervensi" value="{{ old('nama_intervensi')}}">
+                                         <input type="text" class="form-control @error('nama_intervensi') is-invalid @enderror" name="nama_intervensi[]" value="{{ old('nama_intervensi')}}">
                                     {{-- PESAN ERROR --}}
                                     @error('nama_intervensi')
                                         <div class="invalid-feedback">
@@ -255,7 +255,7 @@
                                     <label for="exampleInputEmail1" class="form-label mt-10">Kode Bidang</label>
                                         <div class="dropdown">
                                             <div class="btn-group">
-                                                <select id="bidang-dropdown" class="form-control" name="bidang_id">
+                                                <select id="bidang-dropdown" class="form-control" name="bidang_id[]">
                                                     <option value="">-- Pilih Kode Bidang --</option>
                                                         @foreach ($bidang as $data) 
                                                     <option value="{{$data->id}}">
@@ -280,7 +280,7 @@
                                     <label for="exampleInputEmail1" class="form-label mt-10">Kode ASN</label>
                                         <div class="dropdown">
                                             <div class="btn-group">
-                                                    <select id="user-dropdown" class="form-control" name="user_id">
+                                                    <select id="user-dropdown" class="form-control" name="user_id[]">
                                                         <option value="">-- Pilih Kode ASN --</option>
                                                         @foreach ($user as $data) 
                                                         <option value="{{$data->id}}">
